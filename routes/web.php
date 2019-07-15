@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+
+Route::get('/{path?}', [
+    'uses' => 'HomeController@react',
+    'as' => 'react',
+    'where' => ['path' => '.*']
+]);
